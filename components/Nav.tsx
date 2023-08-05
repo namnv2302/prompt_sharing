@@ -35,12 +35,16 @@ const Nav = () => {
             <Link href="/create-prompt" className="black_btn">
               Create Post
             </Link>
-            <button type="button" onClick={signOut} className="outline_btn">
+            <button
+              type="button"
+              onClick={() => signOut()}
+              className="outline_btn"
+            >
               Sign Out
             </button>
             <Link href="/profile">
               <Image
-                src={session.user.image}
+                src={session.user.image || ""}
                 alt="profile"
                 width={37}
                 height={37}
@@ -68,7 +72,7 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex">
             <Image
-              src={session.user.image}
+              src={session.user.image || ""}
               alt="profile"
               width={37}
               height={37}
